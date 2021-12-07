@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+    <style>
+        .colorOrange{
+            color: orange;
+        }
+        .colorBlue{
+            color: blue;
+            font-size: large;
+            width: 100px;
+        }
+        .container {
+            width: 500px;
+            clear: both;
+        }
+        .container input {
+            width: 100%;
+            clear: both;
+        }
+
+        .line{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap:20px;
+            
+        }
+
+        .textInput{
+            /* float:left; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="GET" class="colorOrange">
+        <h1 style="background-color: orange;color: white;">Sở thích của bạn</h1>
+        <div class="line">
+            <p class="colorBlue">Họ và tên</p>
+            <input class="textInput" type="text" name="yourname"/>
+        </div>
+        <div class="line">
+            <p class="colorBlue">Email</p>
+            <input type="email" name="email"/>
+        </div>
+        <p class="colorBlue">Sở thích</p>
+        <input type="checkbox" name="Hobby1" value="Thể thao">Thể thao
+        <input type="checkbox" name="Hobby2" value="Âm nhạc">Âm nhạc
+        <input type="checkbox" name="Hobby3" value="Đọc sách">Đọc sách <br>
+        <input type="checkbox" name="Hobby4" value="Lướt web">Lướt web
+        <input type="checkbox" name="Hobby5" value="Chơi game">Chơi game
+        <input type="checkbox" name="Hobby6" value="Điện ảnh">Điện ảnh<br>
+        <input type="checkbox" name="Hobby7" value="Du lịch">Du lịch
+        <br>
+        <input type="submit" value="Gửi thông tin">
+        <input type="reset" value="Nhập lại">
+    </form>
+    </div>
+    
+</body>
+
+</html>
