@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML links</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <img id="img1" class="img" src="./imgs/funny-cat1_part1x1.jpg" alt="img1" width="800px" height="160px"/>
+        <img id="img2" class="img" src="./imgs/funny-cat1_part2x1.jpg" alt="img2" width="800px" height="160px"/>
+        <img id="img3" class="img" src="./imgs/funny-cat1_part3x1.jpg" alt="img3" width="800px" height="160px"/>
+        <img id="img4" class="img" src="./imgs/funny-cat1_part4x1.jpg" alt="img4" width="800px" height="160px"/>
+        <img id="img5" class="img" src="./imgs/funny-cat1_part5x1.jpg" alt="img5" width="800px" height="160px"/>
+    </div>
+    <script>
+        let imgs = Array.from(document.getElementsByClassName('img'));
+        
+        let files = ["funny-cat1_part1x1.jpg",
+            "funny-cat1_part2x1.jpg",
+            "funny-cat1_part3x1.jpg",
+            "funny-cat1_part4x1.jpg",
+            "funny-cat1_part5x1.jpg",
+            "monkey_part1x1.jpg",
+            "monkey_part2x1.jpg",
+            "monkey_part3x1.jpg",
+            "monkey_part4x1.jpg",
+            "monkey_part5x1.jpg",
+            "panda_swap_part1x1.jpg",
+            "panda_swap_part2x1.jpg",
+            "panda_swap_part3x1.jpg",
+            "panda_swap_part4x1.jpg",
+            "panda_swap_part5x1.jpg"];
+
+        imgs.map(img => {
+            img.addEventListener('click', (e) => {
+                var num = Math.floor ((Math.random() * files.length)); 
+                img.src = './imgs/' + files[num];
+            });
+        });
+    </script>
+</body>
+
+</html>
