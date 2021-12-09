@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<body id="body">
+    <canvas id="myCanvas" width="1000px" height="500px" style="border:1px solid #d3d3d3;">
+        <script>
+            function Circle(x, y, vx, vy, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+
+                this.vx = vx;
+                this.vy = vy;
+
+                this.update = function () {
+                    var ctx = document.getElementById("myCanvas").getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                    ctx.fillStyle = color;
+                    ctx.fill();
+                    ctx.closePath();
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.y>400){
+                        document.write("You lose");
+                    }
+
+                    if (this.x>=box.x && this.x<=box.x+box.w && this.y>=390 && this.y<=400){
+                        this.vy=-this.vy;
+                    }
+
+                    //changing direction on hitting wall
+                    else if (this.y >= (500 - 15) || this.y <= 0 + 15) {
+                        this.vy = -this.vy;
+                    }
+                    else if (this.x >= (1000 - 15) || this.x <= +15) {
+                        this.vx = -this.vx;
+                    }
+                }
+            }
+
+            function getRandomHex() {
+                return Math.floor(Math.random() * 255);
+            }
+
+            function getRandomColor() {
+                var red = getRandomHex();
+                var green = getRandomHex();
+                var blue = getRandomHex();
+                return "rgb(" + red + "," + blue + "," + green + ")";
+            }
+
+            var circle;
+
+            function createCircle(i) {
+                var ctx = document.getElementById("myCanvas").getContext("2d");
+                var radius = Math.floor(15 * 2);
+                var color = getRandomColor();
+                // var x = 20;
+                // var y = 20;
+                var x = Math.random() * 1000;
+                var y = Math.random() * 300;
+
+                var rndX = Math.floor((Math.random() * 5) + 1);     //random starting velocity
+                var rndY = Math.floor((Math.random() * 5) + 1);
+
+                circle = new Circle(x, y, 6, 5, radius, color);
+
+                ctx.beginPath();
+                ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = color;
+                ctx.fill();
+            }
+
+            function clearCanvas() {
+                var ctx = document.getElementById("myCanvas").getContext("2d");
+                ctx.clearRect(0, 0, 1366, 750);
+            }
+
+            createCircle(0);
+
+
+            function rect(x,y,w, h) {
+                this.w = w;
+                this.h = h;
+                this.x = x;
+                this.y = y;
+
+                this.s = function () {
+                    return w * h;
+                }
+
+                this.c = function () {
+                    return w * 2 + h * 2;
+                }
+
+                this.setW = function (w) {
+                    this.w = w;
+                }
+
+                this.setH = function (h) {
+                    this.h = h;
+                }
+            }
+
+            let box = new rect(20,400,200, 30);
+
+            document.onkeydown = checkKey;
+
+            function checkKey(e) {
+                e = e || window.event;
+
+                if (e.keyCode == '38') {
+                    console.log("up");
+                    // up arrow
+                }
+                else if (e.keyCode == '40') {
+                    // down arrow
+                    console.log("down");
+
+                }
+                else if (e.keyCode == '37') {
+                    // left arrow
+                    console.log("left");
+                    // console.log(circle.w);
+                    if (box.x-30>=0){
+                        box.x-=30;
+                        // console.log("/?");
+                    }
+
+                }
+                else if (e.keyCode == '39') {
+                    // right arrow
+                    console.log("right");
+                    // circle.w;
+                    if (box.x+30<=1000){
+                        box.x+=30;
+                        // console.log("/?");
+                    }
+
+                }
+
+            }
+
+            function update() {
+                var i;
+                clearCanvas();
+                circle.update();
+
+                var ctx = document.getElementById("myCanvas").getContext("2d");
+                ctx.rect(box.x, box.y, box.w, box.h);
+                ctx.fill();
+            }
+
+            setInterval(update, 15);
+
+
+
+        </script>
+</body>
+
+</html>
