@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>...</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="exercise1(5)">Bài 1</button>
+        <button onclick="exercise2(5)">Bài 2</button>
+        <button onclick="main3(5)">Bài 3</button>
+        <button onclick="exercise4(5)">Bài 4</button>
+        <button onclick="exercise5(-5,7,3)">Bài 5</button>
+        <button onclick="exercise6(5)">Bài 6</button>
+        <button onclick="exercise7(1, 2)">Bài 7</button>
+        <button onclick="exercise8([1,2,3,4,6])">Bài 8</button>
+        <button onclick="exercise9(['a', 'b', 'c', 'd', 'b', 'c', 'd'], 'e')">Bài 9</button>
+    </div>
+    <script>
+        function exercise1(num) {
+            alert(num + "^2 = " + num * num);
+        }
+
+        function exercise2(r) {
+            alert("R = " + r + "\nS = " + (r * Math.PI * Math.PI) + "\nC = " + 2 * r * Math.PI);
+        }
+
+        function main3(num) {
+            let result = exercise3(num);
+            alert(num + "! = " + result);
+        }
+
+        function exercise3(num) {
+            if (num == 1) {
+                return 1;
+            } else {
+                return exercise3(num - 1) * num;
+            }
+        }
+
+        function exercise4(c) {
+            if (isNaN(c)) {
+                alert(c + " is not a number");
+            }
+            else {
+                alert(cc + " is a number");
+            }
+        }
+
+        function exercise5(num1, num2, num3) {
+            alert("num1 = " + num1 + "\nnum2 = " + num2 + "\nnum3 = " + num3 + "\nMin: " + Math.min(num1, num2, num3));
+        }
+
+        function exercise6(num) {
+            if (num > 0 && Number.isInteger(num)) {
+                alert(num + " is positive number");
+            } else {
+                alert(num + " not positive number");
+            }
+        }
+
+        function exercise7(x, y) {
+            let temp = x;
+            x = y;
+            y = temp;
+            alert("(" + x + ", " + y + ") <=> (" + x + ", " + y + ")");
+        }
+
+        function exercise8(arr) {
+            alert("Array: " + arr + "\nArray reverse: " + arr.reverse());
+        }
+
+        function exercise9(arrayChar, ch) {
+            let countCh = 0;
+            arrayChar.forEach(element => {
+                if (ch == element) {
+                    countCh++;
+                }
+            });
+            if (countCh == 0) {
+                countCh--;
+            }
+            alert("Array: " + arrayChar + "\nCharacter: " + ch + "\nCount: " + countCh);
+        }
+
+    </script>
+</body>
+
+</html>
