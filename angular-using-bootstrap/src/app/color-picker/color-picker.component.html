@@ -1,0 +1,5 @@
+<div>
+    <h3>Color picker</h3>
+    <input type="color" [(ngModel)]="color" (change) = "colorPicker()" name="hi" id="" />
+    <div class="border p-10 mt-3" height="100px" [style.background-color] = "color">.>&nbsp;</div>
+</div>
