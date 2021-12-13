@@ -1,8 +1,9 @@
-function isPrime(number: number): boolean {
+function isPrime(number) {
     let isPrime = true;
     if (number < 2) {
         isPrime = false;
-    } else if (number > 2) {
+    }
+    else if (number > 2) {
         for (let i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 isPrime = false;
@@ -12,13 +13,12 @@ function isPrime(number: number): boolean {
     }
     return isPrime;
 }
-
 let array = [1, 5, 9, 2, 6, 15, 19, 35, 51, 53];
-let s=0;
-
+let s = 0;
 for (let number of array) {
     if (isPrime(number)) {
         s += number;
     }
 }
 console.log("Tổng các số nguyên tố trong mảng trên là: " + s);
+//# sourceMappingURL=main2.js.map
