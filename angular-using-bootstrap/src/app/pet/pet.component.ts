@@ -15,3 +15,4 @@ export class PetComponent implements OnInit {
 
   ngOnInit() {
   }
+}

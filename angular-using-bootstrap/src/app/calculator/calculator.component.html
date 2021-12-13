@@ -1,0 +1,17 @@
+<p>calculator works!</p>
+<label>
+    Number fisrt
+    <input type="url" [(ngModel)]="numFirst">
+</label>
+
+<label>
+    Number second
+    <input type="url" [(ngModel)]="numSecond">
+</label>
+
+<button (click)="add()">Add</button>
+<button (click)="sub()">Sub</button>
+<button (click)="div()">Div</button>
+<button (click)="mul()">Mul</button>
+
+<h3>Result = {{res}}</h3>

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
 import { PetComponent } from './pet/pet.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     FontSizeEditorComponent,
-    PetComponent
+    PetComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
