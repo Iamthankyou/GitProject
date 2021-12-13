@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Part 1</title>
+</head>
+
+<body>
+    <script>
+function isSquare(x) {
+    let s = parseInt(Math.sqrt(x));
+    return (s * s == x);
+}
+
+function isFibonacci(n) {
+    return isSquare(5 * n * n + 4) || isSquare(5 * n * n - 4);
+}
+
+document.write("8 is fibonaci ? : " + isFibonacci(8));
+    </script>
+</body>
+
+</html>

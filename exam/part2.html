@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Part 1</title>
+</head>
+
+<body>
+    <script>
+function tryRemoveFromArray(arr,x) {
+    while (arr.indexOf(x) !== -1) {
+        arr.splice(arr.indexOf(x), 1);
+    }
+
+    return arr;
+}
+let arr = [10, 324, 45, 90, 10, 9808];
+
+document.write("Remove 10 from array: " + tryRemoveFromArray(arr,10));
+    </script>
+</body>
+
+</html>
