@@ -1,0 +1,7 @@
+<div *ngIf="dict; else tmpl">
+  <h2>Trans: {{dict.mean}}</h2>
+</div>
+
+<ng-template #tmpl>
+  <h2>Please select word to search in dictionary</h2>
+</ng-template>

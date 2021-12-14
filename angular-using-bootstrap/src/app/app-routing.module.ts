@@ -5,6 +5,8 @@ import {YoutubePlaylistComponent} from "./youtube-playlist/youtube-playlist.comp
 import {YoutubePlayerComponent} from "./youtube-player/youtube-player.component";
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
+import {DetailComponent} from "./dict/detail/detail.component";
+import { PageComponent } from './dict/page/page.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,16 @@ const routes: Routes = [
   {
     path: 'product/create',
     component: ProductCreateComponent
+  },
+  {
+    path: 'dict',
+    component: PageComponent,
+    children: [
+      {
+        path: ':id',
+        component: DetailComponent
+      }
+    ]
   }
 ];
 
