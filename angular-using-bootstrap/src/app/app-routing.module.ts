@@ -9,30 +9,12 @@ import {ProductUpdateComponent} from "./product/product-update/product-update.co
 
 const routes: Routes = [
   {
-    path: 'timelines',
-    component: TimelinesComponent
+    path: 'product',
+    loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
   },
   {
-    path: 'youtube',
-    component: YoutubePlaylistComponent,
-    children: [
-      {
-        path: ':id',
-        component: YoutubePlayerComponent
-      }
-    ]
-  },
-  {
-    path: 'product/list',
-    component: ProductListComponent
-  },
-  {
-    path: 'product/create',
-    component: ProductCreateComponent
-  },
-  {
-    path: 'product/edit/:id',
-    component: ProductUpdateComponent
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
   }
 ];
 

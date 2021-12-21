@@ -50,15 +50,11 @@ import { ProductUpdateComponent } from './product/product-update/product-update.
     TimelinesComponent,
     YoutubePlaylistComponent,
     YoutubePlayerComponent,
-    ProductListComponent,
-    ProductCreateComponent,
-    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
