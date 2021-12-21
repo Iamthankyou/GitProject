@@ -1,6 +1,11 @@
-<div class="gallery-container">
-  <div class="gallery-item" *ngFor="let img of listImage"
-       [style.max-width.%]="itemWidth" [style.flex-basis.%]="itemWidth">
-    <app-image-card [src]="img"></app-image-card>
-  </div>
+<div id="container">
+<div class="overlay-left"></div>
+<div class="overlay-right"></div>
+<div id="grid"class="image-cropper">
+  <app-image-card [src]="listImage[index]"></app-image-card>
+</div>
+<div>
+  <a id="slider-buttons-left" (click)="moveLeft()">&#10094;</a>
+  <a id="slider-buttons-right" (click)="moveRight()">&#10095;</a>
+</div>
 </div>

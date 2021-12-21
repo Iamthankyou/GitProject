@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, Optional} from '@angular/core';
+import {Component, Inject, Input, OnInit, Optional} from '@angular/core';
 import {GalleryConfig} from './token';
 
 @Component({
@@ -7,28 +7,38 @@ import {GalleryConfig} from './token';
   styleUrls: ['./image-gallery.component.css']
 })
 export class ImageGalleryComponent implements OnInit {
-  listImage = [
-    'https://via.placeholder.com/1280x420/e91e63/ffffff?text=1',
-    'https://via.placeholder.com/1280x420/e91e63/ffffff?text=2',
-    'https://via.placeholder.com/1280x420/e91e63/ffffff?text=3',
-    'https://via.placeholder.com/1280x420/e91e63/ffffff?text=4'
-  ];
+  @Input() listImage: any[]  = [];
+
+  images:any;
 
   itemWidth: number | undefined;
-  config = 4;
+  index = 0;
 
   constructor(
     @Inject(GalleryConfig)
     @Optional()
-      config: number
+      index: number
   ) {
-    if (config) {
-      this.config = config;
+    if (index) {
+      this.index = index;
     }
   }
 
   ngOnInit(): void {
-    this.itemWidth = 100 / this.config;
+    this.itemWidth = 100;
   }
 
+  moveLeft(){
+    if (this.index>0){
+      this.index--;
+    }
+    console.log(this.index);
+  }
+
+  moveRight(){
+    if (this.index+1<this.listImage.length){
+      this.index++;
+    }
+    console.log(this.index);
+  }
 }
