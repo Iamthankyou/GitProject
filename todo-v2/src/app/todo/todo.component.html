@@ -1,0 +1,13 @@
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <input type="text" class="form-control" [formControl]="content" (change)="saveTodo()" placeholder="Todo...">
+  <ul>
+    <li class="m-3" [class.complete]="todo.complete" *ngFor="let todo of todos">
+      <span (click)="toggleTodo(todo.id)" >{{todo.content}}.</span>
+<!--      <label class="link-primary ms-2 border-bottom border-3" (click)="updateTodo(todo.id)">Edit</label>-->
+      <label class="link-info" (click)="deleteTodo(todo.id)">- Delete</label>
+    </li>
+  </ul>
+</div>
